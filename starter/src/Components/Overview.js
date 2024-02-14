@@ -23,9 +23,17 @@ const Overview = () => {
           </tr>
           <tr>
             <td>Capital City: </td>
-            {currentDisplay.capital.map((e) => (
+            {/* {currentDisplay.capital.map((e) => (
               <td>{e}</td>
-            ))}
+            ))} */}
+            <td>
+              {currentDisplay.capital.map((capital, index) => (
+                <span key={index}>
+                  {capital}
+                  {index !== currentDisplay.capital.length - 1 && ", "}
+                </span>
+              ))}
+            </td>
           </tr>
           <tr>
             <td>Languages Spoken: </td>
@@ -47,11 +55,11 @@ const Overview = () => {
           </tr>
           <tr>
             <td>Independent: </td>
-            <td>{currentDisplay.independent ? 'true' : 'false'}</td>
+            <td>{currentDisplay.independent ? "true" : "false"}</td>
           </tr>
           <tr>
             <td>Member of UN: </td>
-            <td>{currentDisplay.unMember ? 'true' : 'false'}</td>
+            <td>{currentDisplay.independent ? "true" : "false"}</td>
           </tr>
         </table>
       </div>
