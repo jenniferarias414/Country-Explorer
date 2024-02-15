@@ -5,6 +5,7 @@ import OptionDisplay from "./Components/OptionDisplay";
 import { selectPotentials } from "./redux/slices/potentialCountriesSlice";
 import { useSelector } from "react-redux";
 import {selectDisplay} from './redux/slices/displayCountrySlice';
+// import Loading from "./Components/Loading";
 
 function App() {
     const currentDisplay = useSelector(selectDisplay);
@@ -14,8 +15,12 @@ function App() {
     return (
         <div className="App font-link">
             <Header />
+           
+            {/* <Loading /> */}
+           
             {/* {currentDisplay && <MainDisplay /> || !currentDisplay && <OptionDisplay />} */}
             {currentDisplay ? <MainDisplay /> : <OptionDisplay />}
+
         </div>
     );
 }
